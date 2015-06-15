@@ -1,0 +1,45 @@
+<head>
+  <title>TestMeteorApp</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+    {{>main}}
+  </div>
+
+</body>
+
+
+
+
+
+
+<!--<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>-->
+<template name="main">
+  <div class="rooms-list">
+    <ul>
+      {{#each rooms}}
+      <li class="room-name">{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="chat-room">
+    {{>room}}
+  </div>
+
+</template>
+
+<template name="room">
+  <h1>{{activeRoom}}</h1>
+  <ul>
+    {{#each messages}}
+      <li>{{username}}: {{message}}</li>
+    {{/each}}
+
+  </ul>
+  <input type="text" size="50%" name="message" id="message" placeholder="Enter your message" />
+</template>
